@@ -1,7 +1,7 @@
 {
   "name": "gcal-tui",
   "version": "0.1.0",
-  "description": "Quiet read-only terminal agenda for Google Calendar via private ICS (WSL-friendly)",
+  "description": "Quiet read-only TypeScript terminal agenda for Google Calendar via private ICS. One-shot fetch, stdout + TUI, WSL-friendly, no OAuth.",
   "type": "module",
   "engines": {
     "node": ">=20"
