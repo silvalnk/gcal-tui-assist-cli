@@ -4,9 +4,6 @@
 > Inspirada em [google-calendar-tui](https://github.com/akitaonrails/google-calendar-tui), mas **ICS-first** (WSL / sem GNOME).  
 > Busca uma vez, imprime, sai. Sem OAuth de app, sem daemon.
 
-Repositório: [silvalnk/gcal-tui-assist-cli](https://github.com/silvalnk/gcal-tui-assist-cli)  
-Pasta local: `gcal_tui_cli/` · Marca: **GCal TUI** · Binário: `gcal-tui`
-
 ## SDD (comece por aqui)
 
 Este repo segue [Spec Driven Development no estilo Kiro](https://kiro.dev/docs/specs/): requirements → design → tasks, mais steering e `AGENTS.md`.
