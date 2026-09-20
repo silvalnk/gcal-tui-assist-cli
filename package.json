@@ -1,0 +1,37 @@
+{
+  "name": "gcal-tui",
+  "version": "0.1.0",
+  "description": "Quiet read-only terminal agenda for Google Calendar via private ICS (WSL-friendly)",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "gcal-tui": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "start": "tsx src/index.ts --demo",
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvalnk/gcal-tui-assist-cli.git"
+  },
+  "homepage": "https://github.com/silvalnk/gcal-tui-assist-cli",
+  "dependencies": {
+    "commander": "^14.0.0",
+    "node-ical": "^0.26.0",
+    "string-width": "^7.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
