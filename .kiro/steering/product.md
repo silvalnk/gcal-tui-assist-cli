@@ -4,7 +4,7 @@ inclusion: always
 
 # Product
 
-**GCal TUI** é uma agenda quieta, somente leitura, para o terminal. Busca uma vez, mostra, sai.
+**GCal TUI** é uma agenda quieta, somente leitura, para o terminal: TypeScript, ICS-first, one-shot. Busca uma vez, mostra no stdout ou na TUI, sai. Sem OAuth e sem daemon.
 
 Inspiração: [google-calendar-tui](https://github.com/akitaonrails/google-calendar-tui) (Rust + GOA). Este fork conceitual é TypeScript e **ICS-first** porque o ambiente inclui WSL.
 
