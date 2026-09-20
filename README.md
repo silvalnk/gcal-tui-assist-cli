@@ -1,8 +1,20 @@
 # GCal TUI
 
-> Agenda **somente leitura** para o terminal, em TypeScript.  
-> Inspirada em [google-calendar-tui](https://github.com/akitaonrails/google-calendar-tui), mas **ICS-first** (WSL / sem GNOME).  
-> Busca uma vez, imprime, sai. Sem OAuth de app, sem daemon.
+> Agenda **somente leitura** no terminal, em **TypeScript**.  
+> Google Calendar via **ICS secreto** — sem OAuth, sem GNOME, sem daemon.  
+> Busca uma vez, mostra, sai. Spec-Driven (Kiro). Feita para WSL.
+
+![GCal TUI: help, agenda demo, tema evangelion e ICS nerv](docs/images/cli.png)
+
+| | |
+|--|--|
+| Stack | TypeScript (Node 20+), CLI `gcal-tui` |
+| Fonte | URL iCal secreta, arquivo `.ics`, ou `--demo` |
+| Saída | stdout colorido ou TUI (`m` more, `q` quit) |
+| Temas | `default`, `evangelion`, `nerv` |
+| Fora de escopo | OAuth, GOA, criar/editar eventos, polling |
+
+Inspirada em [google-calendar-tui](https://github.com/akitaonrails/google-calendar-tui) (Rust + GNOME Online Accounts). Este lab é **ICS-first**: no WSL não há GOA, então a agenda entra pelo endereço secreto em formato iCal.
 
 ## SDD (comece por aqui)
 
@@ -16,6 +28,7 @@ Este repo segue [Spec Driven Development no estilo Kiro](https://kiro.dev/docs/s
 | [`.kiro/steering/`](.kiro/steering/) | Produto, stack, estrutura, segurança |
 | [`AGENTS.md`](AGENTS.md) | Briefing fixo para o agente |
 | [`.specify/CONTEXT.md`](.specify/CONTEXT.md) | Snapshot da sessão |
+| [`docs/images/cli.png`](docs/images/cli.png) | Print da CLI |
 | Este README | Como rodar |
 
 Se código e spec divergirem, a **spec manda**.
@@ -25,7 +38,8 @@ Se código e spec divergirem, a **spec manda**.
 Node 20+.
 
 ```bash
-cd gcal_tui_cli   # clone: gcal-tui-assist-cli
+git clone git@github.com:silvalnk/gcal-tui-assist-cli.git
+cd gcal-tui-assist-cli
 npm install
 npm test
 npx tsx src/index.ts --demo
@@ -34,15 +48,7 @@ npx tsx src/index.ts --ics fixtures/sample.ics --details --theme nerv
 npx tsx src/index.ts --tui --demo
 ```
 
-Saída stdout (exemplo):
-
-```
-Today
-  09:00    Standup
-
-Tomorrow
-  14:00    Dentist
-```
+`--demo` gera compromissos em torno de hoje (Standup, Dentist, feriado, Deep work). Eventos cujo fim já passou somem da lista.
 
 ## Google Calendar no WSL
 
@@ -63,7 +69,7 @@ Tomorrow
 
 Essa URL é acesso de leitura: se vazar, resete o endereço secreto nas configurações do Google.
 
-`--ics` na linha de comando também funciona, mas pode ir para o histórico do shell.
+`--ics` na linha de comando também funciona, mas pode ir para o histórico do shell. Erros da CLI nunca imprimem a URL — só o rótulo `ICS #n`.
 
 ## Flags
 
@@ -72,7 +78,7 @@ Essa URL é acesso de leitura: se vazar, resete o endereço secreto nas configur
 | `--ics <source>` | URL ou arquivo `.ics` (repetível) |
 | `--demo` | Agenda de exemplo em torno de hoje |
 | `--details` | Duração, Meet, origem, calendário, local |
-| `--tui` | Vista interativa (`m` more, `0` top, `q` quit) |
+| `--tui` | Vista interativa (`m` more, `q` quit) |
 | `--theme` | `default`, `evangelion`, `nerv` |
 | `--no-color` | Sem ANSI no stdout (`NO_COLOR` também) |
 | `--fetch-days` | Janela futura (padrão 60) |
