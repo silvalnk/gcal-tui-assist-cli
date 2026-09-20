@@ -34,4 +34,4 @@ Fonte da verdade: `.kiro/specs/calendar-cli/requirements.md`.
 
 ## Última mudança
 
-Parser ICS: validação VCALENDAR, RDATE, RRULE de alta frequência, paths absolutos, timeouts HTTP. Testes ics/ui/cli + README. Checkpoint da v1 verde.
+README com print da CLI (`docs/images/cli.png`) e descrição alinhada ao GitHub: ICS-first, one-shot, stdout + TUI, sem OAuth.
