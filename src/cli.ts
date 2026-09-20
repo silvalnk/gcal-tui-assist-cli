@@ -29,7 +29,7 @@ export function createProgram(): Command {
   return new Command()
     .name("gcal-tui")
     .description(
-      "A quiet, read-only terminal agenda for Google Calendar via private ICS (WSL-friendly)",
+      "Quiet read-only TypeScript agenda for Google Calendar via private ICS. One-shot fetch, stdout or TUI, WSL-friendly, no OAuth.",
     )
     .version(readPackageVersion())
     .option(
