@@ -2,7 +2,7 @@
 
 > Agenda **somente leitura** no terminal, em **TypeScript**.  
 > Google Calendar via **ICS secreto** — sem OAuth, sem GNOME, sem daemon.  
-> Busca uma vez, mostra, sai. Spec-Driven (Kiro). Feita para WSL.
+> Busca uma vez, mostra, sai. Spec-Driven (Kiro)
 
 ![GCal TUI: help, agenda demo, tema evangelion e ICS nerv](docs/images/cli.png)
 
