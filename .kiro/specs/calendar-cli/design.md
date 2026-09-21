@@ -4,7 +4,7 @@
 
 CLI Node.js + TypeScript (ESM, Node 20+). Um processo, uma busca, uma renderização.
 
-O original em Rust ([akitaonrails/google-calendar-tui](https://github.com/akitaonrails/google-calendar-tui)) divide `calendar` (GOA + Google API), `ics`, `display` e `ui`. Aqui **não há GOA**. `ics` é a única origem de dados reais; `calendar` vira o domínio (evento, categoria, dedupe, sanitização).
+Não há GOA nem Google Calendar API. `ics` é a única origem de dados reais; `calendar` é o domínio (evento, categoria, dedupe, sanitização). Módulos: `ics`, `calendar`, `display`, `ui`.
 
 ```text
 CLI (commander)
@@ -81,19 +81,19 @@ HTTP: `AbortSignal.timeout`, `error.cause` e URLs removidos via `redactSourceErr
 
 Modelo, `category()`, `isPast()`, `durationMinutes()`, `isMultiDay()`, `dedupeEvents()`, `sortEvents()`, `createImportedEvent()`.
 
-Detecta vídeo por host em description/location/url (o original zera `has_meet` no import ICS; aqui detectamos no texto — melhoria documentada).
+Detecta vídeo por host em description/location/url no import ICS.
 
 ### `src/sanitize.ts`
 
-Port da rotina Rust: ESC CSI/OSC, controles, bidi `U+202A–U+202E` / `U+2066–U+2069` / LRM/RLM, whitespace colapsado.
+Remove sequências de controle do terminal: ESC CSI/OSC, controles, bidi `U+202A–U+202E` / `U+2066–U+2069` / LRM/RLM, whitespace colapsado.
 
 ### `src/theme.ts` + `src/display.ts`
 
-RGB idêntico ao crate original. ANSI `38;2;r;g;b`. `NO_COLOR` só no stdout.
+Paletas RGB em `src/theme.ts` (`default`, `evangelion`, `nerv`). ANSI `38;2;r;g;b`. `NO_COLOR` só no stdout.
 
 ### `src/ui.ts`
 
-Alternate screen `\x1b[?1049h`, raw mode, redraw no resize. Plano `buildBodyPlan` copiado do Rust (`same day` → `same week` → `later`). Exportado para testes.
+Alternate screen `\x1b[?1049h`, raw mode, redraw no resize. Plano `buildBodyPlan` (`same day` → `same week` → `later`). Exportado para testes.
 
 ### `src/demo.ts`
 

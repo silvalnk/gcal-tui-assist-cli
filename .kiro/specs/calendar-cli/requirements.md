@@ -2,9 +2,9 @@
 
 ## Introduction
 
-**GCal TUI** (`gcal-tui`) é uma agenda **somente leitura** para o terminal, em TypeScript. Inspirada em [google-calendar-tui](https://github.com/akitaonrails/google-calendar-tui), busca compromissos **uma vez**, imprime (ou renderiza) e **sai**. Não faz polling em background.
+**GCal TUI** (`gcal-tui`) é uma agenda **somente leitura** para o terminal, em TypeScript. Busca compromissos **uma vez**, imprime (ou renderiza) e **sai**. Não faz polling em background.
 
-O original usa GNOME Online Accounts (D-Bus) por padrão. Este projeto é **ICS-first**: o ambiente alvo inclui WSL e máquinas sem GNOME. Fontes são URLs iCal privadas, arquivos `.ics` locais, um arquivo de config, ou `--demo`.
+GNOME Online Accounts e OAuth da Google Calendar API estão fora da v1. Este projeto é **ICS-first**: o ambiente alvo inclui WSL e máquinas sem GNOME. Fontes são URLs iCal privadas, arquivos `.ics` locais, um arquivo de config, ou `--demo`.
 
 ## Glossary
 
@@ -102,14 +102,14 @@ O original usa GNOME Online Accounts (D-Bus) por padrão. Este projeto é **ICS-
 
 ### Requirement 7: Themes
 
-**User Story:** Como usuário, quero as paletas `default`, `evangelion` e `nerv`, para combinar com o original e com `clock-tui`.
+**User Story:** Como usuário, quero as paletas `default`, `evangelion` e `nerv`, para escolher o visual da agenda.
 
 #### Acceptance Criteria
 
 1. `--theme` SHALL accept `default`, `evangelion`, `nerv` and reject unknown names.
 2. WHEN `--theme` is omitted, THE Agenda_CLI SHALL use `TCLOCK_WIDGET_THEME` if it is one of those names, else config `theme`, else `default`.
 3. Explicit `--theme` SHALL win over the environment variable and config.
-4. Palettes SHALL match the RGB values of [google-calendar-tui](https://github.com/akitaonrails/google-calendar-tui) for the same theme names.
+4. Palettes SHALL use the RGB values defined in `src/theme.ts` for the same theme names.
 
 ### Requirement 8: Interactive TUI with `more`
 

@@ -20,7 +20,7 @@ Briefing **independente de sessão** para Cursor, Kiro e qualquer agente. O hist
 
 ## Produto
 
-**GCal TUI** (`gcal-tui`) é uma agenda somente leitura no terminal. TypeScript, ICS-first (WSL / sem GNOME). Busca uma vez, imprime ou abre TUI, sai. Inspirada em [akitaonrails/google-calendar-tui](https://github.com/akitaonrails/google-calendar-tui). Repo: `silvalnk/gcal-tui-assist-cli`. **GOA e OAuth estão fora da v1.**
+**GCal TUI** (`gcal-tui`) é uma agenda somente leitura no terminal. TypeScript, ICS-first (WSL / sem GNOME). Busca uma vez, imprime ou abre TUI, sai. Repo: `silvalnk/gcal-tui-assist-cli`. **GOA e OAuth estão fora da v1.**
 
 ## Comandos
 

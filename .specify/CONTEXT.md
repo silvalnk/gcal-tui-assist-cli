@@ -34,4 +34,4 @@ Fonte da verdade: `.kiro/specs/calendar-cli/requirements.md`.
 
 ## Última mudança
 
-README com print da CLI (`docs/images/cli.png`) e descrição alinhada ao GitHub: ICS-first, one-shot, stdout + TUI, sem OAuth.
+Docs sem referência a repositório de terceiros: GCal TUI descreve só o próprio produto ICS-first.

@@ -14,7 +14,7 @@
 | Temas | `default`, `evangelion`, `nerv` |
 | Fora de escopo | OAuth, GOA, criar/editar eventos, polling |
 
-Inspirada em [google-calendar-tui](https://github.com/akitaonrails/google-calendar-tui) (Rust + GNOME Online Accounts). Este lab é **ICS-first**: no WSL não há GOA, então a agenda entra pelo endereço secreto em formato iCal.
+Este lab é **ICS-first**: no WSL não há GNOME Online Accounts, então a agenda entra pelo endereço secreto em formato iCal.
 
 ## SDD (comece por aqui)
 

@@ -8,5 +8,4 @@ Fluxo [Kiro Specs](https://kiro.dev/docs/specs/) (Requirements-First):
 4. Steering (`.kiro/steering/`) + `AGENTS.md` — contexto em toda sessão
 5. Código TypeScript alinhado à spec
 
-Inspiração de produto: [google-calendar-tui](https://github.com/akitaonrails/google-calendar-tui).  
 Inspiração de processo: [Kiro](https://github.com/kirodotdev/Kiro).
